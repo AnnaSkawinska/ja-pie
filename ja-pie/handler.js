@@ -7,7 +7,6 @@ module.exports.pie = async (event) => {
       {
         name: 'Szarlotka',
         kcal: '500',
-        input: event,
       },
       null,
       2

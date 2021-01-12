@@ -16,6 +16,6 @@ provider:
 functions:
   pie:
     handler: handler.pie
-#      - httpApi:
-#          path: /users/create
-#          method: get
+    events: 
+      - httpApi: 'GET /random-pie'
+      
