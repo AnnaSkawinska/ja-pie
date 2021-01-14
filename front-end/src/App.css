@@ -1,0 +1,60 @@
+.App {
+  text-align: center;
+}
+
+.App-header {
+  background-color: white;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: #ff4366;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+.horizontal {
+  float: left;
+}
+
+.smalltext {
+  font-size: small;
+}
+
+.arithmetics {
+  text-align: center;
+  color: #2b8ec7;
+  padding-top: 1 px;
+  padding-bottom: 1 px;
+}
+
+.icons {
+  height: 40vmin;
+}
+
+.imageButton img:hover {
+  height: 45vmin;
+}
+
+.imageButton {
+  padding: 0;
+  border: none;
+  background: none; 
+}
+
+.visually-hidden {
+  position: absolute !important;
+  height: 1px;
+  width: 1px;
+  overflow: hidden;
+  clip: rect(1px 1px 1px 1px);
+  clip: rect(1px, 1px, 1px, 1px);
+  white-space: nowrap;
+}
+
+
+
