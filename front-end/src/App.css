@@ -9,7 +9,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  font-size: medium;
   color: #ff4366;
 }
 
@@ -25,19 +25,25 @@
   font-size: small;
 }
 
+.bigtext {
+  font-size: x-large;
+}
+
 .arithmetics {
   text-align: center;
   color: #2b8ec7;
-  padding-top: 1 px;
-  padding-bottom: 1 px;
+  padding-top: 1px;
+  padding-bottom: 1px;
+  display: table-cell;
+  vertical-align: middle;
 }
 
 .icons {
-  height: 40vmin;
+  height: 20vmin;
 }
 
 .imageButton img:hover {
-  height: 45vmin;
+  height: 25vmin;
 }
 
 .imageButton {
@@ -46,15 +52,7 @@
   background: none; 
 }
 
-.visually-hidden {
-  position: absolute !important;
-  height: 1px;
-  width: 1px;
-  overflow: hidden;
-  clip: rect(1px 1px 1px 1px);
-  clip: rect(1px, 1px, 1px, 1px);
-  white-space: nowrap;
+.imageButton p {
+  color: #2b8ec7;
+  font-size: medium;
 }
-
-
-

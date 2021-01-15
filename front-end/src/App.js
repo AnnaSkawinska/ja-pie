@@ -11,29 +11,16 @@ function App() {
         </h1>
         <div className="arithmetics">
           <div className="horizontal">
-            <img src={pie} className="icons" alt="logo" />
-          </div>
-          <p className="horizontal">
-            +
-          </p>
-          <div className="horizontal">
-            <img src={pie} className="icons" alt="logo" />
-          </div>
-          <p className="horizontal">
-            =
-          </p>
-          <div className="horizontal">
-          <p>NaN</p>
-          <p className="smalltext">ludzie tyle nie żyją, lol</p>
+            <img src={pie} className="icons" alt="18 + 18 =" />
           </div>
         </div>
 
         <p>
           Z powodu pandemii nie poczęstowałam Cię dziś w biurze następującym ciastem:
         </p>
-      
-        <EatMe/>
-        
+
+        <EatMe />
+
       </header>
     </div>
   );
