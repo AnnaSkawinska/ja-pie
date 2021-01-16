@@ -7,6 +7,9 @@ org: annatest
 # Check out our docs for more details
 frameworkVersion: '2'
 
+package:
+  individually: true
+
 provider:
   name: aws
   runtime: nodejs12.x
