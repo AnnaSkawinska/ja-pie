@@ -10,11 +10,15 @@
   align-items: center;
   justify-content: center;
   font-size: medium;
-  color: #ff4366;
+  color: #2b8ec7;
 }
 
 .App-link {
   color: #61dafb;
+}
+
+h1 {
+  color: #ff4366;
 }
 
 .horizontal {
@@ -31,6 +35,7 @@
 
 .arithmetics {
   text-align: center;
+  font-size: large;
   color: #2b8ec7;
   padding-top: 1px;
   padding-bottom: 1px;
@@ -39,11 +44,11 @@
 }
 
 .icons {
-  height: 20vmin;
+  height: 10vmin;
 }
 
 .imageButton img:hover {
-  height: 25vmin;
+  height: 13vmin;
 }
 
 .imageButton {
@@ -55,4 +60,15 @@
 .imageButton p {
   color: #2b8ec7;
   font-size: medium;
+}
+
+.eatme {
+  color: #ff4366;
+}
+
+hr {
+  background-color: #2b8ec7;
+  width: 80%;
+  height: 1px;
+  border-width: 0px;
 }

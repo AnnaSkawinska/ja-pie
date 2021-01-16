@@ -1,38 +1,47 @@
 import React, { useState } from 'react';
-import pie from '../icons/pie.png';
+import question from '../icons/question.png';
 import pieceOfCake from '../icons/pieceOfCake.png';
 import exercise from '../icons/exercise.jpg';
 
 export default function EatMe() {
-  const [eaten, setEaten] = useState(false);
-  const [pieName, setPieName] = useState(undefined);
-  const [pieWeight, setPieWeight] = useState(undefined);
-  const [sportName, setSportName] = useState(undefined);
-  const [sportDuration, setSportDuration] = useState(undefined);
+  const [pie, setPie] = useState(undefined);
+  const [sport, setSport] = useState(undefined);
 
   const pieUrl = 'https://bhvnxhcg3f.execute-api.eu-west-1.amazonaws.com/random-pie';
   const sportUrl = 'https://bhvnxhcg3f.execute-api.eu-west-1.amazonaws.com/random-sport?kcal=';
 
-  const renderCake = ({ name, weight, sport, duration }) => {
-    if (eaten) {
-      return <div><img src={pieceOfCake} className="cakeForYou icons" alt="piece of cake" />
-        <p>{name}</p>
-        <p className="smalltext">{weight}</p>
+  const renderCake = ({ pie, sport }) => {
+    return (pie && sport)
+      ? <div><img src={pieceOfCake} className="icons" alt="piece of cake" />
+        <div className="eatme">
+
+          <p>{pie.name}</p>
+          <p className="smalltext">{pie.kcal} kcal</p>
+        </div>
         <p>...ale za to możesz dzisiaj:</p>
-        <img src={exercise} className="cakeForYou icons" alt="exercise" />
-        <p><span className="bigtext">NIE</span> {sport} przez <span className="bigtext">{Math.floor(duration)}</span> minut!</p>
+        <img src={exercise} className="icons" alt="exercise" />
+        <p className="eatme">
+          <span className="bigtext">NIE</span> {sport.verb} {' '} {sport.sport} przez {' '}
+          <span className="bigtext">{Math.floor(sport.duration)}</span> minut!</p>
       </div>
-    } else {
-      return <div />
-    }
+      :
+      <div />
   }
 
   const renderGetPiece = () => {
-    return eaten ? <div /> : <p>Kliknij i weź kawałek!</p>;
+    return sport ? <div /> : <p>Sprawdź, jakim!</p>;
   }
 
   const renderOneMorePiece = () => {
-    return eaten ? <p>Jeszcze jeden kawałek!</p> : <div />;
+    return sport ? <p>Jeszcze jeden kawałek!</p> : <div />;
+  }
+
+  const renderFooter = () => {
+    return sport ? <div className="smalltext">
+      <hr />
+      <p>Postawione na Lambdach i strasznie słabym kodzie w Reakcie. Zobacz na <a href="https://github.com/AnnaSkawinska/ja-pie"  target="_blank" rel="noopener noreferrer">GitHubie</a></p>
+      <p><marquee>Graphic design is my passion</marquee></p>
+    </div> : <div />;
   }
 
   const fetchFromApi = async (url) => {
@@ -43,25 +52,22 @@ export default function EatMe() {
   const handleClick = async () => {
     // const pie = await fetch(pieUrl);
     const pie = await fetchFromApi(pieUrl);
-
-    setEaten(true);
-    setPieName(pie.name);
-    setPieWeight(pie.weight);
+    setPie(pie);
 
     const sport = await fetchFromApi(sportUrl + pie.kcal);
-    setSportName(sport.verb + ' ' + sport.sport);
-    setSportDuration(sport.duration);
+    setSport(sport);
   }
 
   return (
     <div>
-      {renderCake({ name: pieName, weight: pieWeight, sport: sportName, duration: sportDuration })}
+      {renderCake({ sport, pie })}
 
       <button className="imageButton" onClick={handleClick}>
         {renderOneMorePiece()}
-        <img src={pie} className="icons" alt="get pie!" />
+        <img src={question} className="icons" alt="get pie!" />
         {renderGetPiece()}
       </button>
+      {renderFooter()}
     </div>
   );
 

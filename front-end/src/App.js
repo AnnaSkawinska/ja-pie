@@ -11,7 +11,20 @@ function App() {
         </h1>
         <div className="arithmetics">
           <div className="horizontal">
-            <img src={pie} className="icons" alt="18 + 18 =" />
+            <img src={pie} className="icons" alt="logo" />
+          </div>
+          <p className="horizontal">
+            +
+          </p>
+          <div className="horizontal">
+            <img src={pie} className="icons" alt="logo" />
+          </div>
+          <p className="horizontal">
+            =
+          </p>
+          <div className="horizontal">
+            <p>NaN</p>
+            <p className="smalltext">ludzie tyle nie żyją, lol</p>
           </div>
         </div>
 
