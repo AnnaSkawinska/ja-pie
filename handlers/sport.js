@@ -17,7 +17,7 @@ module.exports.sport = async (event) => {
     };
 
   const kcal = event.queryStringParameters.kcal;
-  const sport = SPORTS[_.random(0, SPORTS.length)];
+  const sport = SPORTS[_.random(0, SPORTS.length-1)];
 
   return {
     statusCode: 200,
@@ -25,7 +25,7 @@ module.exports.sport = async (event) => {
       {
         verb: sport.verb,
         sport: sport.sport,
-        duration: kcal / sport.kcalPerMin,
+        duration: Math.floor(kcal / sport.kcalPerMin),
       },
 
       null,
@@ -123,7 +123,7 @@ SPORTS = [
   },
   {
     "verb": "jeździć na",
-    "sport": "nartach biegowych",
+    "sport": "nartach",
     "kcalPerMin": 9.6
   },
   {

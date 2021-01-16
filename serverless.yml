@@ -17,7 +17,7 @@ provider:
 
 functions:
   pie:
-    handler: handler.pie
+    handler: handlers/pie.pie
     events: 
       - httpApi: 'GET /random-pie'
     layers:
@@ -25,7 +25,7 @@ functions:
       - {Ref: UtilsLambdaLayer}
 
   sport:
-    handler: sport.sport
+    handler: handlers/sport.sport
     events: 
       - httpApi: 'GET /random-sport'
     layers:

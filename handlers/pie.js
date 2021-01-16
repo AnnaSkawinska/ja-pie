@@ -4,7 +4,7 @@ const _ = require("lodash");
 let PIES = [];
 
 module.exports.pie = async (event) => {
-  const pie = PIES[_.random(0, PIES.length)];
+  const pie = PIES[_.random(0, PIES.length-1)];
   return {
     statusCode: 200,
     body: JSON.stringify(
