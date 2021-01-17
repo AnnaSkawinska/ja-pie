@@ -1,0 +1,44 @@
+service: ja-pie-front-end
+# app and org for use with dashboard.serverless.com
+app: pie
+org: annatest
+
+frameworkVersion: '2'
+
+plugins:
+  - serverless-s3-sync
+
+provider:
+  name: aws
+  region: eu-west-1
+
+custom:
+  s3Sync:
+    - bucketName: birthday-pie
+      localDir: build
+      deleteRemoved: true
+
+resources:
+  Resources:
+    HostingBucket:
+      Type: AWS::S3::Bucket
+      Properties:
+        BucketName: birthday-pie
+        AccessControl: PublicRead
+        WebsiteConfiguration:
+          IndexDocument: index.html
+          ErrorDocument: index.html
+          
+    BucketPolicyHostingBucket:
+      Type: 'AWS::S3::BucketPolicy'
+      Properties:
+        PolicyDocument:
+          Statement:
+            - Sid: PublicReadForGetBucketObjects
+              Effect: Allow
+              Principal: '*'
+              Action:
+                - 's3:GetObject'
+              Resource: arn:aws:s3:::birthday-pie/*
+        Bucket:
+          Ref: HostingBucket
