@@ -21,3 +21,7 @@ $ npm install --save lodash
 ```
 sls deploy
 ```
+
+## Icons by
+* [tartila - www.freepik.com](https://www.freepik.com/vectors/logo)
+* [ch.vector - www.freepik.com](https://www.freepik.com/vectors/logo)
