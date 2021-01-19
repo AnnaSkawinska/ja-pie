@@ -9,6 +9,9 @@ frameworkVersion: '2'
 
 package:
   individually: true
+  exclude:
+    - resources/**
+    - front-end/**
 
 provider:
   name: aws
@@ -17,6 +20,11 @@ provider:
   region: eu-west-1
   httpApi:
     cors: true
+  iamRoleStatements:
+    - Effect: Allow
+      Action:
+        - s3:GetObject
+      Resource: arn:aws:s3:::birthday-pie-ingredients/*
 
 functions:
   pie:

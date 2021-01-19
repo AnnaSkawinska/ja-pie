@@ -21,7 +21,7 @@ export default function EatMe() {
         <p>...ale za to możesz dzisiaj:</p>
         <img src={exercise} className="icons" alt="exercise" />
         <p className="eatme">
-          <span className="bigtext">NIE</span> {sport.verb} {' '} {sport.sport} przez {' '}
+          <span className="bigtext">NIE</span> {sport.name} przez {' '}
           <span className="bigtext">{Math.floor(sport.duration)}</span> minut!</p>
       </div>
       :

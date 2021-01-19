@@ -10,6 +10,9 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "aws-sdk": "^2.828.0",
+    "csvtojson": "^2.0.10",
     "lodash": "^4.17.20"
-  }
+  },
+  "dependencies": {}
 }
