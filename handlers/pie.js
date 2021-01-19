@@ -1,9 +1,9 @@
 'use strict';
 const _ = require('lodash');
-const AWS = require('aws-sdk');
+const S3Client = require('aws-sdk/clients/s3');
 const csv = require('csvtojson');
 
-const S3 = new AWS.S3();
+const S3 = new S3Client();
 
 module.exports.pie = async (event) => {
 
